@@ -13,20 +13,24 @@ The project is divided into three main analytical problems:
 * **Objective:** Simulate independent Bernoulli trials for various probabilities ($P \\in \\{1/3, 2/3, 1/4\\}$) across different sample sizes ($n$ up to 10,000).
 * **Technique:** Empirical estimation of population moments (mean and variance) using pseudorandom number generation in R.
 * **Results:** The simulations provide a direct visual and numerical proof of the Strong Law of Large Numbers. Cumulative empirical means, initially chaotic due to stochastic noise at low $n$, strictly converge to the theoretical expected values ($P$) as $n \\to \\infty$. 
-* **Visuals:** ![Bernoulli Convergence](bernoulli_convergence.png)
+* **Visuals:** 
+![Bernoulli Convergence](bernoulli_convergence.png)
 
 ### Problem 2: Cauchy Distributions & The Inverse Transform Method
 * **Objective:** Generate Cauchy-distributed random variables computationally and analyze their asymptotic behavior.
 * **Technique:** **Probability Integral Transform**. By uniformly sampling $U \\sim \\text{Uniform}(0,1)$ and applying the inverse Cumulative Distribution Function $x = \\mu + \\sigma \\tan(\\pi(U - 0.5))$, we accurately modeled a standard Cauchy distribution.
 * **Results:** The empirical analysis highlights the breakdown of the Law of Large Numbers. Because the theoretical expected value (first moment) of a Cauchy distribution is undefined (diverges), the empirical mean never stabilizes. The simulation successfully captured the massive, discontinuous jumps caused by extreme outliers, proving the volatile nature of heavy-tailed distributions.
-* **Visuals:** ![Histogram](box_plot.png) ![Cumulative mean plots](Cauchy_divergence.png)
+* **Visuals:** 
+![Histogram](box_plot.png) 
+![Cumulative mean plots](Cauchy_divergence.png)
 
 
 ### Problem 3: Monte Carlo Integration
 * **Objective:** Estimate the definite integral $I = \\int_{0}^{10} \\exp(-2|x - 5|) dx$ without using analytical antiderivatives.
 * **Technique:** **Monte Carlo Expectation Method (LOTUS)**. The integral was mathematically reformulated as an expected value with respect to a Uniform distribution: $I = \\mathbb{E}_f [10 \\exp(-2|X - 5|)]$ where $X \\sim U(0, 10)$. 
 * **Results:** By averaging 100,000 stochastic evaluations, the Monte Carlo estimate converged tightly to the true deterministic integral value (approx. 0.9999). This demonstrates how probabilistic uniform sampling can highly accurately approximate complex geometric areas.
-* **Visuals:** ![Monte Carlo estimate](montecarlo_estimate.png)
+* **Visuals:** 
+![Monte Carlo estimate](montecarlo_estimate.png)
 
 ## 🚀 How to Run 
 
