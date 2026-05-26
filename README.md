@@ -13,7 +13,7 @@ The project is divided into three main analytical problems:
 * **Objective:** Simulate independent Bernoulli trials for various probabilities ($P \\in \\{1/3, 2/3, 1/4\\}$) across different sample sizes ($n$ up to 10,000).
 * **Technique:** Empirical estimation of population moments (mean and variance) using pseudorandom number generation in R.
 * **Results:** The simulations provide a direct visual and numerical proof of the Strong Law of Large Numbers. Cumulative empirical means, initially chaotic due to stochastic noise at low $n$, strictly converge to the theoretical expected values ($P$) as $n \\to \\infty$. 
-* **Visuals:** Reference the uploaded plots (e.g., `bernoulli_convergence.png`) to observe the random walk trajectories locking onto the true probabilities.
+* **Visuals:** ![Bernoulli Convergence](bernoulli_convergence.png)
 
 ### Problem 2: Cauchy Distributions & The Inverse Transform Method
 * **Objective:** Generate Cauchy-distributed random variables computationally and analyze their asymptotic behavior.
